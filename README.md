@@ -1,2 +1,5 @@
 # Practice_Android
-![""](screen_recording.gif)
+| Столбец 1 | Столбец 2 |
+|----------|-----------|
+| Текст    | ![Гифка](screen_recording.gif) |
+
