@@ -53,8 +53,8 @@ fun MainScreen(mainViewModel: MainViewModel = viewModel()) {
     val installButtonName by mainViewModel.installButtonName.observeAsState()
 
     LazyColumn(content = {
-        item { ImageHeader() }
-        item { IConHeader(usageLevel.orEmpty()) }
+
+        item { ImageGameHeader(usageLevel.orEmpty()) }
         item { KeyWords() }
         item { DescriptionGame(description.orEmpty()) }
         item { ScenesGame() }

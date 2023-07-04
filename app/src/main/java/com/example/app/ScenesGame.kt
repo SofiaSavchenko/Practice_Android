@@ -1,11 +1,11 @@
 package com.example.app
 
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
@@ -19,12 +19,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun ScenesGame() {
+
+    val context = LocalContext.current
+
     LazyRow(Modifier.padding(top = 24.dp, start = 24.dp)) {
         item {
             Box(contentAlignment = Alignment.Center) {
@@ -37,7 +41,11 @@ fun ScenesGame() {
                         .clip(shape = RoundedCornerShape(14.dp))
                 )
                 IconButton(
-                    onClick = { },
+                    onClick = { Toast.makeText(
+                        context,
+                        "(｡◕‿◕｡)",
+                        Toast.LENGTH_SHORT
+                    ).show()},
                     modifier = Modifier
                         .size(48.dp)
                         .clip(CircleShape)
@@ -75,6 +83,7 @@ fun ScenesGame() {
                     .size(width = 240.dp, height = 128.dp)
                     .padding(start = 16.dp)
                     .clip(shape = RoundedCornerShape(14.dp))
+
             )
         }
 

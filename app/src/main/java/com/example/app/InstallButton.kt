@@ -1,5 +1,6 @@
 package com.example.app
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -21,8 +22,15 @@ import com.example.app.ui.theme.DarkBlue
 
 @Composable
 fun InstallButton(name: String) {
+
+    val context = LocalContext.current
+
     Button(
-        onClick = { /* Действие при нажатии на кнопку */ },
+        onClick = { Toast.makeText(
+            context,
+            "(｡◕‿‿◕｡)",
+            Toast.LENGTH_SHORT
+        ).show() },
         colors = ButtonDefaults.buttonColors(Color(0xFFF4D144)),
         modifier = Modifier
             .padding(horizontal = 24.dp, vertical = 40.dp)
