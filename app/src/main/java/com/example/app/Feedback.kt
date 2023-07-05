@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -74,20 +75,44 @@ fun FeedbackPerson(feedback: Feedback) {
 
         }
 
-
 }
+
+@Composable
+fun FeedbackList(feedbacks: List<Feedback>)
+{
+    for ((index, feedback) in feedbacks.withIndex()) {
+
+        FeedbackPerson(feedback)
+
+        if (index != feedbacks.size - 1) {
+            Spacer(modifier = Modifier.height(24.dp))
+            Line()
+        }
+    }
+}
+
 
 @Preview()
 @Composable
 fun FeedbackPersonPreview() {
 
-    FeedbackPerson(
+    val context = LocalContext.current
+
+    val feedbackList = listOf(
         Feedback(
             image = R.drawable.person_1,
-            author = "Auguste Conte",
-            date = "February 14, 2019",
-            text = "“Once you start to learn its secrets, there’s a wild" +
-                    " and exciting variety of play here that’s unmatched, even by its peers.”"
+            author = context.getString(R.string.person1_name),
+            date = context.getString(R.string.person1_date),
+            text = context.getString(R.string.person1_text)
+        ),
+        Feedback(
+            image = R.drawable.person_2,
+            author = context.getString(R.string.person2_name),
+            date = context.getString(R.string.person2_date),
+            text = context.getString(R.string.person2_text)
         )
     )
+
+    FeedbackList(feedbackList)
+
 }

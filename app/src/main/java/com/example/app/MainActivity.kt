@@ -13,6 +13,7 @@ import com.example.app.ui.theme.AppTheme
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
@@ -46,6 +47,8 @@ val montserratRegular = FontFamily(Font(R.font.montserrat_regular))
 @Composable
 fun MainScreen(mainViewModel: MainViewModel = viewModel()) {
 
+    val context = LocalContext.current
+
     val usageLevel by mainViewModel.usageLevel.observeAsState()
     val description by mainViewModel.description.observeAsState()
     val rating by mainViewModel.rating.observeAsState()
@@ -61,32 +64,24 @@ fun MainScreen(mainViewModel: MainViewModel = viewModel()) {
         item { ReviewRating(rating.orEmpty(), reviews.orEmpty()) }
         item {
 
-            FeedbackPerson(
-                Feedback(
-                    image = R.drawable.person_1,
-                    author = "Auguste Conte",
-                    date = "February 14, 2019",
-                    text = "“Once you start to learn its secrets, there’s a wild" +
-                            " and exciting variety of play here that’s unmatched, even by its peers.”"
-                )
-            )
-        }
+            val feedbackList = mutableListOf<Feedback>()
 
-        item {
-            Spacer(modifier = Modifier.height(16.dp))
-            Line()
-        }
-        item {
+            feedbackList.add(Feedback(
+                image = R.drawable.person_1,
+                author = context.getString(R.string.person1_name),
+                date = context.getString(R.string.person1_date),
+                text = context.getString(R.string.person1_text)
+            ))
 
-            FeedbackPerson(
-                Feedback(
-                    image = R.drawable.person_2,
-                    author = "Jang Marcelino",
-                    date = "February 14, 2019",
-                    text = "“Once you start to learn its secrets, there’s a wild" +
-                            " and exciting variety of play here that’s unmatched, even by its peers.”"
-                )
-            )
+            feedbackList.add(Feedback(
+                image = R.drawable.person_2,
+                author = context.getString(R.string.person2_name),
+                date = context.getString(R.string.person2_date),
+                text = context.getString(R.string.person2_text)
+            ))
+
+            FeedbackList(feedbackList)
+
         }
 
         item { InstallButton(installButtonName.orEmpty()) }

@@ -87,6 +87,6 @@ fun ReviewRating(rating:String, reviews:String) {
 fun ReviewRatingPreview(){
 
     val context = LocalContext.current
-    DescriptionGame(context.getString(R.string.reviews))
+    ReviewRating(context.getString(R.string.rating), context.getString(R.string.reviews))
 
 }

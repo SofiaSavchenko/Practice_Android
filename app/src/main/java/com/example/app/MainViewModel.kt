@@ -13,7 +13,7 @@ class MainViewModel(context: Context): ViewModel() {
     private val _description : MutableLiveData<String> = MutableLiveData(context.getString(R.string.description_game))
     val description : LiveData<String> = _description
 
-    private val _rating : MutableLiveData<String> = MutableLiveData(context.getString(R.string.raiting))
+    private val _rating : MutableLiveData<String> = MutableLiveData(context.getString(R.string.rating))
     val rating : LiveData<String> = _rating
 
     private val _reviews : MutableLiveData<String> = MutableLiveData(context.getString(R.string.reviews))
