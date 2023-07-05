@@ -22,7 +22,7 @@ import com.example.app.ui.theme.DarkWhite
 import com.example.app.ui.theme.LightWhite
 
 @Composable
-fun ReviewRating(rating:String, reviews:String) {
+fun ReviewRating(rating: String, reviews: String) {
     Column() {
         Text(
             text = "Review & Ratings",
@@ -84,7 +84,7 @@ fun ReviewRating(rating:String, reviews:String) {
 
 @Preview
 @Composable
-fun ReviewRatingPreview(){
+fun ReviewRatingPreview() {
 
     val context = LocalContext.current
     ReviewRating(context.getString(R.string.rating), context.getString(R.string.reviews))

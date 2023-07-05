@@ -48,7 +48,7 @@ fun ImageGameHeader(usageLevel: String) {
                 modifier = Modifier
                     .width(88.dp)
                     .height(88.dp)
-                    .background(color = Color.Black,  shape = RoundedCornerShape(13.5.dp))
+                    .background(color = Color.Black, shape = RoundedCornerShape(13.5.dp))
                     .border(
                         width = 2.dp,
                         color = DarkGray_1,
@@ -67,7 +67,7 @@ fun ImageGameHeader(usageLevel: String) {
             Spacer(modifier = Modifier.width(12.dp))
 
             Box(Modifier.padding(top = 34.dp)) {
-                Column() {
+                Column {
                     Text(
                         text = "DoTA 2",
                         color = Color.White,
@@ -107,8 +107,7 @@ fun ImageGameHeader(usageLevel: String) {
 
 @Preview
 @Composable
-fun ImageGameHeaderPreview()
-{
+fun ImageGameHeaderPreview() {
     val context = LocalContext.current
     ImageGameHeader(context.getString(R.string.usage_level))
 }

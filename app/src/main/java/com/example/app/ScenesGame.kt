@@ -41,11 +41,13 @@ fun ScenesGame() {
                         .clip(shape = RoundedCornerShape(14.dp))
                 )
                 IconButton(
-                    onClick = { Toast.makeText(
-                        context,
-                        "(｡◕‿◕｡)",
-                        Toast.LENGTH_SHORT
-                    ).show()},
+                    onClick = {
+                        Toast.makeText(
+                            context,
+                            "(｡◕‿◕｡)",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    },
                     modifier = Modifier
                         .size(48.dp)
                         .clip(CircleShape)
@@ -92,7 +94,7 @@ fun ScenesGame() {
 
 @Preview
 @Composable
-fun ScenesGamePreview(){
+fun ScenesGamePreview() {
 
     ScenesGame()
 

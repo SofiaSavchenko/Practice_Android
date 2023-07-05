@@ -26,11 +26,13 @@ fun InstallButton(name: String) {
     val context = LocalContext.current
 
     Button(
-        onClick = { Toast.makeText(
-            context,
-            "(｡◕‿‿◕｡)",
-            Toast.LENGTH_SHORT
-        ).show() },
+        onClick = {
+            Toast.makeText(
+                context,
+                "(｡◕‿‿◕｡)",
+                Toast.LENGTH_SHORT
+            ).show()
+        },
         colors = ButtonDefaults.buttonColors(Color(0xFFF4D144)),
         modifier = Modifier
             .padding(horizontal = 24.dp, vertical = 40.dp)

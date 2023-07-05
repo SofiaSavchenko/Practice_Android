@@ -26,60 +26,58 @@ data class Feedback(val author: String, val image: Int, val date: String, val te
 fun FeedbackPerson(feedback: Feedback) {
 
 
-
-        Column(Modifier.padding(start = 24.dp, top = 30.dp)) {
-            Row() {
-                val image = painterResource(feedback.image)
-                Image(
-                    painter = image,
-                    contentDescription = null,
-                    modifier = Modifier
-                        .size(36.dp)
-                )
-                Spacer(modifier = Modifier.width(16.dp))
-
-                Column() {
-                    Text(
-                        feedback.author,
-                        color = Color.White,
-                        fontWeight = FontWeight.Normal,
-                        fontSize = 16.sp,
-                        letterSpacing = 0.5.sp,
-                        fontFamily = skModernistRegular
-                    )
-                    Spacer(modifier = Modifier.height(7.dp))
-
-                    Text(
-                        feedback.date,
-                        color = Color.White.copy(0.4f),
-                        fontWeight = FontWeight.Normal,
-                        fontSize = 12.sp,
-                        letterSpacing = 0.5.sp,
-                        fontFamily = skModernistRegular
-                    )
-                }
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            Text(
-                feedback.text,
+    Column(Modifier.padding(start = 24.dp, top = 30.dp)) {
+        Row {
+            val image = painterResource(feedback.image)
+            Image(
+                painter = image,
+                contentDescription = null,
                 modifier = Modifier
-                    .padding(end = 24.dp),
-                color = DarkWhite,
-                fontWeight = FontWeight.Normal,
-                fontSize = 12.sp,
-                letterSpacing = 0.5.sp,
-                fontFamily = skModernistRegular
+                    .size(36.dp)
             )
+            Spacer(modifier = Modifier.width(16.dp))
 
+            Column {
+                Text(
+                    feedback.author,
+                    color = Color.White,
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 16.sp,
+                    letterSpacing = 0.5.sp,
+                    fontFamily = skModernistRegular
+                )
+                Spacer(modifier = Modifier.height(7.dp))
+
+                Text(
+                    feedback.date,
+                    color = Color.White.copy(0.4f),
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 12.sp,
+                    letterSpacing = 0.5.sp,
+                    fontFamily = skModernistRegular
+                )
+            }
         }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Text(
+            feedback.text,
+            modifier = Modifier
+                .padding(end = 24.dp),
+            color = DarkWhite,
+            fontWeight = FontWeight.Normal,
+            fontSize = 12.sp,
+            letterSpacing = 0.5.sp,
+            fontFamily = skModernistRegular
+        )
+
+    }
 
 }
 
 @Composable
-fun FeedbackList(feedbacks: List<Feedback>)
-{
+fun FeedbackList(feedbacks: List<Feedback>) {
     for ((index, feedback) in feedbacks.withIndex()) {
 
         FeedbackPerson(feedback)
@@ -92,7 +90,7 @@ fun FeedbackList(feedbacks: List<Feedback>)
 }
 
 
-@Preview()
+@Preview
 @Composable
 fun FeedbackPersonPreview() {
 

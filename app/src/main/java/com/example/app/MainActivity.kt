@@ -3,9 +3,7 @@ package com.example.app
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -16,7 +14,6 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.app.ui.theme.DarkBlue
 
@@ -66,19 +63,23 @@ fun MainScreen(mainViewModel: MainViewModel = viewModel()) {
 
             val feedbackList = mutableListOf<Feedback>()
 
-            feedbackList.add(Feedback(
-                image = R.drawable.person_1,
-                author = context.getString(R.string.person1_name),
-                date = context.getString(R.string.person1_date),
-                text = context.getString(R.string.person1_text)
-            ))
+            feedbackList.add(
+                Feedback(
+                    image = R.drawable.person_1,
+                    author = context.getString(R.string.person1_name),
+                    date = context.getString(R.string.person1_date),
+                    text = context.getString(R.string.person1_text)
+                )
+            )
 
-            feedbackList.add(Feedback(
-                image = R.drawable.person_2,
-                author = context.getString(R.string.person2_name),
-                date = context.getString(R.string.person2_date),
-                text = context.getString(R.string.person2_text)
-            ))
+            feedbackList.add(
+                Feedback(
+                    image = R.drawable.person_2,
+                    author = context.getString(R.string.person2_name),
+                    date = context.getString(R.string.person2_date),
+                    text = context.getString(R.string.person2_text)
+                )
+            )
 
             FeedbackList(feedbackList)
 
@@ -89,47 +90,5 @@ fun MainScreen(mainViewModel: MainViewModel = viewModel()) {
     }, modifier = Modifier.fillMaxSize())
 
 }
-
-
-//@Composable
-//fun GameScreen() {
-//
-//    LazyColumn(content = {
-//        item { ImageHeader() }
-//        item { IConHeader() }
-//        item { KeyWords() }
-//        item { DescriptionGame() }
-//        item { ScenesGame() }
-//        item { ReviewRating() }
-//        item {
-//
-//            FeedbackPerson(
-//                Feedback(
-//                    image = R.drawable.person_1,
-//                    author = "Auguste Conte",
-//                    date = "February 14, 2019",
-//                    text = "“Once you start to learn its secrets, there’s a wild" +
-//                            " and exciting variety of play here that’s unmatched, even by its peers.”"
-//                )
-//            )
-//        }
-//        item {
-//
-//            FeedbackPerson(
-//                Feedback(
-//                    image = R.drawable.person_2,
-//                    author = "Jang Marcelino",
-//                    date = "February 14, 2019",
-//                    text = "“Once you start to learn its secrets, there’s a wild" +
-//                            " and exciting variety of play here that’s unmatched, even by its peers.”"
-//                )
-//            )
-//        }
-//        item { InstallButton() }
-//
-//
-//    }, modifier = Modifier.fillMaxSize())
-//}
-
 
 

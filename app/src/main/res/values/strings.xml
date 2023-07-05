@@ -4,8 +4,8 @@
     <string name="description_game">Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete
         to collectively destroy a large structure defended by the opposing team
         known as the \"Ancient\", whilst defending their own.</string>
-    <string name = "reviews">70M Reviews</string>
-    <string name = "installButton_name">Install</string>
+    <string name="reviews">70M Reviews</string>
+    <string name="installButton_name">Install</string>
     <string name="rating">4.9</string>
     <string name="person1_name">Auguste Conte</string>
     <string name="person1_date">February 14, 2019</string>

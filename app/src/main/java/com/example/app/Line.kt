@@ -30,6 +30,6 @@ fun Line() {
 
 @Preview
 @Composable
-fun LinePreview(){
+fun LinePreview() {
     Line()
 }
