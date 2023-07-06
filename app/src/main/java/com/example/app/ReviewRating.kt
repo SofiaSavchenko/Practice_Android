@@ -23,7 +23,7 @@ import com.example.app.ui.theme.LightWhite
 
 @Composable
 fun ReviewRating(rating: String, reviews: String) {
-    Column() {
+    Column {
         Text(
             text = "Review & Ratings",
             color = LightWhite,
